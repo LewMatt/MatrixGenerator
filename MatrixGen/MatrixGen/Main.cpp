@@ -1,25 +1,44 @@
 #include<iostream>
+#include<time.h>
 using namespace std;
 
 int main()
 {
-	int rows, cols;
 	cout << "|||  MATRIX GENERATOR  |||" << endl << endl;
-	cout << "Number of rows: "; cin >> rows;
-	cout << "Number of columns: "; cin >> cols;
 
-	int **tab = new int*[rows];
-	for (int i = 0; i < rows; i++)
+	while (true)
 	{
-		tab[i] = new int[cols];
-	}
+		int rows, cols;
+		cout << "Number of rows: "; cin >> rows;
+		cout << "Number of columns: "; cin >> cols;
+		cout << endl;
 
-	for (int i = 0; i < rows; i++)
-	{
-		delete[] tab[i];
-	}
-	delete[] tab;
+		int** tab = new int* [rows];
+		for (int i = 0; i < rows; i++)
+		{
+			tab[i] = new int[cols];
+		}
 
+		srand(time(NULL));
+		for (int i = 0; i < rows; i++)
+		{
+			for (int j = 0; j < cols; j++)
+			{
+				tab[i][j] = rand() % 20 - 10;
+				cout.width(3);
+				cout << right << tab[i][j] << " ";
+			}
+			cout << endl;
+		}
+		cout << endl;
+
+		for (int i = 0; i < rows; i++)
+		{
+			delete[] tab[i];
+		}
+		delete[] tab;
+	}
+	
 	system("pause");
 	return 0;
 }
