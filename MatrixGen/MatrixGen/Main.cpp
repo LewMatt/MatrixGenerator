@@ -12,7 +12,7 @@ int main()
 		if(!cin)
 		{
 			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(),'\n');
+			cin.ignore(100,'\n');
 			cout << endl;
 			cout << "Invalid input, try again." << endl<<endl;
 		}
@@ -22,7 +22,7 @@ int main()
 			if (!cin)
 			{
 				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cin.ignore(100,'\n');
 				cout << endl;
 				cout << "Invalid input, try again." << endl<<endl;
 			}
@@ -62,7 +62,6 @@ int main()
 			}
 		}
 	}
-
 	system("pause");
 	return 0;
 }
